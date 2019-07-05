@@ -1,2 +1,2 @@
 # springboot-jpa
-jpa studey
+jpa study
