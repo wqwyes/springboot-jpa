@@ -13,6 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    private String old;
 
     public Integer getId() {
         return id;
@@ -37,8 +38,6 @@ public class User {
     public void setOld(String old) {
         this.old = old;
     }
-
-    private String old;
 
     public String toString(){
         return " [ id="+id+", name="+name+", old="+old+" ]";

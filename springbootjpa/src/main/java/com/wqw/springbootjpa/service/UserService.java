@@ -26,6 +26,20 @@ public interface UserService {
     //JpaRepository类中List<T> findAll(Sort sort);
     List<User> getUsrAllSort();
 
-    //根据ID删除用户
+    //根据ID删除用户,此方法繁琐
     void deleteUser(Integer id);
+
+    //根据ID删除用户
+    void deleteUserById(Integer id);
+
+    //保存用户
+    void savaUser(User user);
+
+    //自定义方法：通过name查找user
+    List<User> findByName(String name);
+
+    //自定义方法：通过name包含字查找user
+    List<User> findByNameLike(String name);
+
+
 }

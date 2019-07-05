@@ -39,8 +39,21 @@ public class SpringbootjpaApplicationTests {
         }
     }
 
+    @Test
+    public void testdeleteUseById(){
+        Integer id = 3;
+        userRepository.deleteById(3);
+    }
 
+    @Test
+    public void findByName(){
+        System.out.println(userRepository.findByName("zhangsan").size());
+    }
 
+    @Test
+    public void findByNameLike(){
+        System.out.println(userRepository.findByNameLike("test").size());
+    }
     @Test
     public void testHello(){
         System.out.println("hello");

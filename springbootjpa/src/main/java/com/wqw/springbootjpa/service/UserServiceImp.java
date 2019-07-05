@@ -56,4 +56,24 @@ public class UserServiceImp implements UserService {
         users.add(user);
         userRepository.deleteInBatch(users);
     }
+
+    @Override
+    public void deleteUserById(Integer id) {
+        userRepository.deleteById(id);
+    }
+
+    @Override
+    public void savaUser(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    public List<User> findByName(String name) {
+        return userRepository.findByName(name);
+    }
+
+    @Override
+    public List<User> findByNameLike(String name) {
+        return userRepository.findByNameLike(name);
+    }
 }
