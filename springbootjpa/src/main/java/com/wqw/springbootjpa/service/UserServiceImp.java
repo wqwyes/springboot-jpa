@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,5 +76,11 @@ public class UserServiceImp implements UserService {
     @Override
     public List<User> findByNameLike(String name) {
         return userRepository.findByNameLike(name);
+    }
+
+//    @Transactional
+    @Override
+    public Integer modifyUserNameById(String userName, Integer id) {
+        return userRepository.modifyByUserId(userName,id);
     }
 }

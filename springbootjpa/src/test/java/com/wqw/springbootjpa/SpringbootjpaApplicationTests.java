@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -54,8 +55,24 @@ public class SpringbootjpaApplicationTests {
     public void findByNameLike(){
         System.out.println(userRepository.findByNameLike("test").size());
     }
+
     @Test
     public void testHello(){
         System.out.println("hello");
+    }
+
+    @Test
+    public void testGetUsers(){
+        System.out.println(userRepository.getUserByName("zhangsan").size());
+    }
+
+    @Test
+    public void testDeleteUserById(){
+        userRepository.deleteUserById(1);
+    }
+
+    @Test
+    public void testModifyByUserId(){
+        System.out.println(userRepository.modifyByUserId("limei",6));
     }
 }

@@ -41,5 +41,8 @@ public interface UserService {
     //自定义方法：通过name包含字查找user
     List<User> findByNameLike(String name);
 
+    //自定义SQL，update user
+    Integer modifyUserNameById(String userName,Integer id);
+
 
 }

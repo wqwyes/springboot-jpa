@@ -90,5 +90,9 @@ public class UserController {
         return userService.findByNameLike(name);
     }
 
-
+    //自定义SQL，update user
+    @GetMapping("/updateUserName")
+    public Integer modifyUserNameById(@RequestParam(value = "userName") String userName, @RequestParam("id") Integer id){
+        return userService.modifyUserNameById(userName,id);
+    }
 }
